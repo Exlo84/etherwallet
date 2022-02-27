@@ -320,7 +320,7 @@ MEW_Tagline                 : 'Open Source JavaScript Client-Side Ether Wallet '
 CX_Tagline                  : 'Open Source JavaScript Client-Side Ether Wallet Chrome Extension ',
 
 /* Footer */
-FOOTER_1                    : 'Free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( myetherwallet.com ) before unlocking your wallet.',
+FOOTER_1                    : 'Free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( webwallet.exlo.no ) before unlocking your wallet.',
 FOOTER_1b                   : 'Vytvorené ',
 FOOTER_2                    : 'Dotácie srdečne vítane: ',
 FOOTER_3                    : 'Client-side wallet generation by ',

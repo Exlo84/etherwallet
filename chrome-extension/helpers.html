@@ -90,7 +90,7 @@
   <section class="container">
     
       <a class="brand" href="/" aria-label="Go to homepage">
-        <img src="images/logo-myetherwallet.svg"   height="64px" width="245px" alt="MyEtherWallet" />
+        <img src="images/logo-myetherwallet.png"   height="64px" width="245px" alt="MyEtherWallet" />
         <p class="small visible-xs">3.40.0</p>
       </a>
     
@@ -131,37 +131,6 @@
       </ul>
     </span>
 
-    <span class="dropdown dropdown-gas" ng-cloak>
-      <a tabindex="0" aria-haspopup="true" aria-label="adjust gas price" class="dropdown-toggle  btn btn-white" ng-click="dropdownGasPrice = !dropdownGasPrice">
-        <span translate="OFFLINE_Step2_Label_3">Gas Price</span>:
-          {{gas.value}} Gwei
-          <i class="caret"></i>
-      </a>
-      <ul class="dropdown-menu" ng-show="dropdownGasPrice">
-        <div class="header--gas">
-          <span translate="OFFLINE_Step2_Label_3">Gas Price</span>:
-          {{gas.value}} Gwei
-          <input type="range" ng-model="gas.value" min="{{gas.min}}" max="{{gas.max}}" step="{{gas.step}}" ng-change="gasChanged()"/>
-          <p class="small col-xs-4 text-left"> <!--translate="GAS_Price_1"-->
-            Really, really slow
-          </p>
-          <p class="small col-xs-4 text-center"> <!--translate="GAS_Price_2"-->
-            Maybe Fast?
-          </p>
-          <p class="small col-xs-4 text-right"> <!--translate="GAS_Price_3"-->
-            Fast
-          </p>
-          <br />
-          <p class="small" style="white-space:normal;font-weight:300;margin: 2rem 0 0;" translate="GAS_PRICE_Desc"></p>
-          <a class="small"
-             translate="x_ReadMore"
-             href="https://kb.myetherwallet.com/gas/what-is-gas-ethereum.html"
-             target="_blank"
-             rel="noopener noreferrer"></a>
-        </div>
-      </ul>
-    </span>
-
     <!-- Warning: The separators you see on the frontend are in styles/etherwallet-custom.less. If you add / change a node, you have to adjust these. Ping tayvano if you're not a CSS wizard -->
     <span class="dropdown dropdown-node" ng-cloak>
       <a tabindex="0"
@@ -192,14 +161,6 @@
 
     </div>
   </section>
-  <p class="dropdown-gas__msg"
-     ng-show="gasPriceMsg"
-     ng-hide="ajaxReq.type!='ETH'">
-    The network is really full right now. Check
-    <a href="https://ethgasstation.info/"
-       target="_blank" rel="noopener noreferrer">Eth Gas Station</a>
-    for gas price to use.
-  </p>
 </section>
 
 <nav role="navigation" aria-label="main navigation" class="container nav-container overflowing">
@@ -998,7 +959,7 @@
 <section class="pre-footer">
   <div class="container">
     <p>
-      MyEtherWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL.
+      ETHO Web Wallet does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys &amp; always check that you are on correct URL.
       <a role="link" tabindex="0" data-toggle="modal" data-target="#disclaimerModal">
         You are responsible for your security.
       </a>
@@ -1012,11 +973,24 @@
 
     <section class="footer--left">
 
-      <a href="/"><img src="images/logo-myetherwallet.svg" height="45px" width="auto" alt="Ether Wallet" class="footer--logo"/></a>
+      <a href="/"><img src="images/logo-myetherwallet.png" height="45px" width="auto" alt="Ether Wallet" class="footer--logo"/></a>
+
+      
+
+      <p ng-show="showBlocks">
+        Latest Block#: {{currentBlockNumber}}
+      </p>
 
       <p>
+        &copy; 2019 MyEtherWallet, Inc
+      </p>
+
+    </section>
+
+    <section class="footer--cent">
+      <p>
         <span translate="FOOTER_1">
-          Free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( myetherwallet.com ) before unlocking your wallet.
+          Free, open-source, client-side interface for generating Ethereum wallets &amp; more. Interact with the Ethereum blockchain easily &amp; securely. Double-check the URL ( webwallet.exlo.no ) before unlocking your wallet.
         </span>
       </p>
 
@@ -1036,66 +1010,6 @@
           Privacy policy
         </a>
       </p>
-
-      <p ng-show="showBlocks">
-        Latest Block#: {{currentBlockNumber}}
-      </p>
-
-      <p>
-        &copy; 2019 MyEtherWallet, Inc
-      </p>
-
-    </section>
-
-    <section class="footer--cent">
-        <h5> <i aria-hidden="true">👫</i> You can support us by supporting our blockchain-family.</h5>
-        <p>Consider using our affiliate links to...</p>
-        <div class="footer__pill-wrap">
-          <a class="footer__pill"  aria-label="Swap Ether or Bitcoin via Bity.com" href="https://bity.com/af/jshkb37v" target="_blank" rel="noopener noreferrer">Swap ETH/BTC/EUR/CHF via Bity.com</a>
-          <a class="footer__pill"  aria-label="Buy Ether with credit card via Simplex" href="https://ccswap.myetherwallet.com" target="_blank" rel="noopener noreferrer">Buy ETH with credit card via Simplex</a>
-       </div>
-        <p> Buy a... </p>
-        <div class="footer__pill-wrap footer__pill-custom-wrap">
-          <a class="footer__pill" href="https://www.ledger.com?r=fa4b" target="_blank" rel="noopener">Ledger Wallet</a>
-          <a class="footer__pill" href="https://shop.trezor.io/?offer_id=10&aff_id=2029" target="_blank" rel="noopener">TREZOR</a>
-          <a class="footer__pill" href="http://shiftcrypto.ositracker.com/91316/7114" target="_blank" rel="noopener">BitBox</a>
-          <a class="footer__pill" href="https://ether.cards/?utm_source=mew&utm_medium=cpm&utm_campaign=site" target="_blank" rel="noopener">ether.card</a>
-          <a class="footer__pill" href="https://thehodlwallet.com?aff=15" target="_blank" rel="noopener">HODL Wallet</a>
-          <a class="footer__pill" href="http://billfodl.com?afmc=2j&utm_campaign=2j&utm_source=leaddyno&utm_medium=affiliate" target="_blank" rel="noopener">Billfodl</a>
-        </div>
-
-        <h5><i aria-hidden="true">💝</i> Donations are always appreciated!</h5>
-        <p>
-          ETH:
-          <span class="mono wrap">
-            mewtopia.eth
-            <a title="See this address on the blockchain explorer" href="https://etherscan.io/address/0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D" class="ext-etheraddresslookup-link" target="_blank">
-              0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D
-            </a>
-          </span>
-          </p>
-        <p>
-          BTC:
-          <span class="mono wrap">
-            <a title="See this address on the blockchain explorer" href="https://blockchain.info/address/1DECAF2uSpFTP4L1fAHR8GCLrPqdwdLse9" class="ext-etheraddresslookup-link" target="_blank">
-            1DECAF2uSpFTP4L1fAHR8GCLrPqdwdLse9
-          </a>
-          </span>
-        </p>
-        <!--
-        <p>MYD: <span class="mono wrap">mewsupport.eth <small>0xf7e983781609012307f2514f63D526D83D24F466</small></span></p>
-        -->
-        <h5 ng-hide="curLang=='en'">
-          <i>🏅</i>
-          <span translate="Translator_Desc"> Thank you to our translators </span>
-        </h5>
-        <p ng-hide="curLang=='en'">
-          <span translate="TranslatorName_1"></span>
-          <span translate="TranslatorName_2"></span>
-          <span translate="TranslatorName_3"></span>
-          <span translate="TranslatorName_4"></span>
-          <span translate="TranslatorName_5"></span>
-        </p>
 
     </section>
 
@@ -1233,40 +1147,6 @@
     </section>
   </section>
 </article>
- 
-
-
- <article class="modal depreciation-modal fade" id="deprecationWarning" tabindex="-1" ng-controller='deprecationCtrl'>
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="depriciation-head">
-          <button type="button" class="close" ng-click="closeModal()" aria-label="Close Dialog">&times;</button>
-        </div>
-        </div>
-        <div class="depriciation-body">
-          <h3>Notice of Vintage MEW Removal</h3>
-          <br /> 
-          <p>
-            After October 20th, 2019, Vintage MEW will no longer be available. <br />
-            As we look towards the future, we are dedicating all our resources to MEW5 and beyond. <br />
-            Thank you for being with us on this journey. <br />
-            Vintage MEW will still be accessible via <a href="https://www.github.com/kvhnuke/etherwallet/" rel="noopener noreferrer"> Github</a> for offline use.
-          </p>
-          <br /> 
-          <br /> 
-          <a href="https://www.myetherwallet.com/" rel="noopener noreferrer"> Click here to be taken to our current interface, MEW V5.</a>
-          <br /> 
-          <br /> 
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
- 
-
-
-
 </main>
 </body>
 </html>
