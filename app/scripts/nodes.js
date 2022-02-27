@@ -15,7 +15,7 @@ nodes.nodeList = {
 	etho: {
 		name: "ETHO",
 		blockExplorerTX: "https://explorer.exlo.no/tx/[[txHash]]",
-		blockExplorerAddr: "https://explorer.exlo.no/addressess/[[address]]",
+		blockExplorerAddr: "https://explorer.exlo.no/address/[[address]]",
 		type: nodes.nodeTypes.ETHO,
 		eip155: true,
 		chainId: 1313114,
