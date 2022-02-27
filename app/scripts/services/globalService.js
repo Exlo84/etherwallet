@@ -36,13 +36,6 @@ var globalService = function($http, $httpParamSerializerJQLike) {
     mew: true,
     cx: true
   },
-  swap: {
-    id: 4,
-    name: "NAV_Swap",
-    url: "swap",
-    mew: true,
-    cx: true
-  },
   offlineTransaction: {
     id: 5,
     name: "NAV_Offline",
