@@ -10,7 +10,7 @@ nodes.nodeTypes = {
 nodes.ensNodeTypes = [nodes.nodeTypes.ETH, nodes.nodeTypes.Ropsten];
 nodes.ensSubNodeTypes = [nodes.nodeTypes.ETH];
 nodes.domainsaleNodeTypes = [nodes.nodeTypes.ETH, nodes.nodeTypes.Ropsten];
-nodes.customNodeObj = {
+nodes.customNodeObj = {}
 nodes.nodeList = {
 	etho: {
 		name: "ETHO",
