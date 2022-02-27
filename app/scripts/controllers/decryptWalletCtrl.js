@@ -65,216 +65,24 @@ var decryptWalletCtrl = function($scope, $sce, walletService) {
   $scope.setdPath = function() {
     if ($scope.walletType == 'ledger') {
       switch ($scope.nodeType) {
-        case nodes.nodeTypes.ETH:
-          $scope.HDWallet.dPath = $scope.HDWallet.ledgerPath;
-          break;
-        case nodes.nodeTypes.ETC:
-          $scope.HDWallet.dPath = $scope.HDWallet.ledgerClassicPath;
-          break;
-        case nodes.nodeTypes.CLO:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwCallistoPath;
-          break;
-        case nodes.nodeTypes.EXP:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwExpansePath;
-          break;
-        case nodes.nodeTypes.UBQ:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwUbqPath;
-          break;
-        case nodes.nodeTypes.POA:
-          $scope.HDWallet.dPath = $scope.HDWallet.ledgerPath;
-          break;
-        case nodes.nodeTypes.AKA:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwAkromaPath;
-          break;
-        case nodes.nodeTypes.PIRL:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwPirlPath;
-          break;
         case nodes.nodeTypes.ETHO:
           $scope.HDWallet.dPath = $scope.HDWallet.hwEther1Path;
-          break;
-        case nodes.nodeTypes.ATH:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwAtheiosPath;
-          break;
-        case nodes.nodeTypes.ELLA:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEllaismPath;
-          break;
-        case nodes.nodeTypes.EGEM:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEtherGemPath;
-          break;
-        case nodes.nodeTypes.MUSIC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwMusicoinPath;
-          break;
-        case nodes.nodeTypes.EOSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEOSClassicPath;
-          break;
-        case nodes.nodeTypes.GO:
-          $scope.HDWallet.dPath = $scope.HDWallet.goPath;
-          break;
-        case nodes.nodeTypes.ILT:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwIolitePath;
-          break;
-        case nodes.nodeTypes.TOMO:
-          $scope.HDWallet.dPath = $scope.HDWallet.tomoPath;
-          break;
-        case nodes.nodeTypes.MIX:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwMixPath;
-          break;
-        case nodes.nodeTypes.REOSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwReoscPath;
-          break;
-        case nodes.nodeTypes.THUNDERCORE:
-          $scope.HDWallet.dPath = $scope.HDWallet.thundercorePath;
           break;
         default:
           $scope.HDWallet.dPath = $scope.HDWallet.ledgerPath;
       }
     } else if ($scope.walletType == 'trezor') {
       switch ($scope.nodeType) {
-        case nodes.nodeTypes.ETH:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorPath;
-          break;
-        case nodes.nodeTypes.ETC:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorClassicPath;
-          break;
-        case nodes.nodeTypes.Ropsten:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorTestnetPath;
-          break;
-        case nodes.nodeTypes.Rinkeby:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorTestnetPath;
-          break;
-        case nodes.nodeTypes.Kovan:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorTestnetPath;
-          break;
-        case nodes.nodeTypes.EXP:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwExpansePath;
-          break;
-        case nodes.nodeTypes.UBQ:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwUbqPath;
-          break;
-        case nodes.nodeTypes.ELLA:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEllaismPath;
-          break;
-        case nodes.nodeTypes.EGEM:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEtherGemPath;
-          break;
-        case nodes.nodeTypes.CLO:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwCallistoPath;
-          break;
-        case nodes.nodeTypes.ETSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwSocialPath;
-          break;
-        case nodes.nodeTypes.MUSIC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwMusicoinPath;
-          break;
-        case nodes.nodeTypes.GO:
-          $scope.HDWallet.dPath = $scope.HDWallet.goPath;
-          break;
-        case nodes.nodeTypes.EOSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEOSClassicPath;
-          break;
-        case nodes.nodeTypes.AKA:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwAkromaPath;
-          break;
-        case nodes.nodeTypes.ESN:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwESNetworkPath;
-          break;
-        case nodes.nodeTypes.PIRL:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwPirlPath;
-          break;
         case nodes.nodeTypes.ETHO:
           $scope.HDWallet.dPath = $scope.HDWallet.hwEther1Path;
           break;
-        case nodes.nodeTypes.ATH:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwAtheiosPath;
-          break;
-        case nodes.nodeTypes.ILT:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwIolitePath;
-          break;
-        case nodes.nodeTypes.TOMO:
-          $scope.HDWallet.dPath = $scope.HDWallet.tomoPath;
-          break;
-        case nodes.nodeTypes.MIX:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwMixPath;
-          break;
-        case nodes.nodeTypes.REOSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwReoscPath;
-          break;
         default:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorPath;
+          $scope.HDWallet.dPath = $scope.HDWallet.defaultDPath;
       }
     } else {
       switch ($scope.nodeType) {
-        case nodes.nodeTypes.ETH:
-          $scope.HDWallet.dPath = $scope.HDWallet.defaultDPath;
-          break;
-        case nodes.nodeTypes.ETC:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorClassicPath;
-          break;
-        case nodes.nodeTypes.Ropsten:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorTestnetPath;
-          break;
-        case nodes.nodeTypes.Rinkeby:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorTestnetPath;
-          break;
-        case nodes.nodeTypes.Kovan:
-          $scope.HDWallet.dPath = $scope.HDWallet.trezorTestnetPath;
-          break;
-        case nodes.nodeTypes.EXP:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwExpansePath;
-          break;
-        case nodes.nodeTypes.UBQ:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwUbqPath;
-          break;
-        case nodes.nodeTypes.CLO:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwCallistoPath;
-          break;
-        case nodes.nodeTypes.ETSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwSocialPath;
-          break;
-        case nodes.nodeTypes.MUSIC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwMusicoinPath;
-          break;
-        case nodes.nodeTypes.GO:
-          $scope.HDWallet.dPath = $scope.HDWallet.goPath;
-          break;
-        case nodes.nodeTypes.EOSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEOSClassicPath;
-          break;
-        case nodes.nodeTypes.AKA:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwAkromaPath;
-          break;
-        case nodes.nodeTypes.ESN:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwESNetworkPath;
-          break;
-        case nodes.nodeTypes.PIRL:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwPirlPath;
-          break;
         case nodes.nodeTypes.ETHO:
           $scope.HDWallet.dPath = $scope.HDWallet.hwEther1Path;
-          break;
-        case nodes.nodeTypes.EGEM:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEtherGemPath;
-          break;
-        case nodes.nodeTypes.ELLA:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwEllaismPath;
-          break;
-        case nodes.nodeTypes.ATH:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwAtheiosPath;
-          break;
-        case nodes.nodeTypes.ILT:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwIolitePath;
-          break;
-        case nodes.nodeTypes.TOMO:
-          $scope.HDWallet.dPath = $scope.HDWallet.tomoPath;
-          break;
-        case nodes.nodeTypes.MIX:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwMixPath;
-          break;
-        case nodes.nodeTypes.REOSC:
-          $scope.HDWallet.dPath = $scope.HDWallet.hwReoscPath;
-          break;
-        case nodes.nodeTypes.THUNDERCORE:
-          $scope.HDWallet.dPath = $scope.HDWallet.thundercorePath;
           break;
         default:
           $scope.HDWallet.dPath = $scope.HDWallet.defaultDPath;
